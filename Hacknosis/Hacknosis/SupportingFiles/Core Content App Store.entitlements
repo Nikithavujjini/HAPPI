@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>com.apple.developer.associated-domains</key>
+	<array>
+		<string>applinks:corecontent.preprod.ot2.opentext.com</string>
+		<string>applinks:corecontent.preprod.ot2.opentext.eu</string>
+		<string>applinks:corecontent.ot2.opentext.com</string>
+		<string>applinks:corecontent.ot2.opentext.eu</string>
+		<string>applinks:corecontent-c4sapqex.devxlab.opentext.com</string>
+		<string>applinks:corecontent-c4sapdevx.devxlab.opentext.com</string>
+		<string>applinks:corecontent.devxlab.opentext.com</string>
+		<string>applinks:corecontent.pprd.ca.opentext.com</string>
+		<string>applinks:corecontent.ca.opentext.com</string>
+		<string>applinks:corecontent.us.opentext.com</string>
+	</array>
+	<key>com.apple.security.application-groups</key>
+	<array>
+		<string>group.$CFBundleIdentifier</string>
+	</array>
+</dict>
+</plist>

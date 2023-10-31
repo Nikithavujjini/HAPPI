@@ -1,0 +1,13 @@
+//
+//  DateHelper.swift
+//  Hacknosis
+//
+//  Created by Vujjini Nikitha on 17/10/23.
+//
+
+
+"Next" = "Next"; //Found in the Login button.
+"OK" = "OK"; //Found in many dialogs as the OK button.
+
+"camera_unavailable" = "Camera is unavailable";
+"camera_unavailable_message" = "\"HAPPI\" does not have permission to access camera. You can change this in Privacy > Settings.";
