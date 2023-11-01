@@ -37,7 +37,7 @@ struct UploadFilesScreenView: View {
             if viewModel.isUploadingFile {
                 LoadingSpinnerView()
             }
-            NavigationLink(EMPTY_STRING, destination: FilesScreenView(nodes: viewModel.nodes), isActive:$viewModel.isShowingFilesScreenView).opacity(0).isHidden(true)
+            NavigationLink(EMPTY_STRING, destination: FilesScreenView(nodes: $viewModel.nodes), isActive:$viewModel.isShowingFilesScreenView).opacity(0).isHidden(true)
         }
         .simpleToast(isPresented: $viewModel.isShowingToast, options: toastOptions) {
             HStack {

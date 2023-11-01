@@ -16,7 +16,7 @@ struct FilesScreenView: View {
     //    private let toastOptions = SimpleToastOptions(
     //        hideAfter: 5
     //    )
-    var nodes: [NodeModel]
+    @Binding var nodes: [NodeModel]
     var body: some View {
         ZStack {
             //  Color.blue.opacity(0.1).ignoresSafeArea()

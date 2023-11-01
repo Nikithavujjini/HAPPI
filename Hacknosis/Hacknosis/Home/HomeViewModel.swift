@@ -15,6 +15,7 @@ class HomeViewModel:AbstractViewModel, ObservableObject {
     @Published var isDoctoreSignedIn = false
    // @Published var isLoading: Bool = false
     var usersFromGroup: [UserModelForGroup] = []
+    @Published var filteredNodes: [NodeModel] = []
     
     override init() {
         super.init()
@@ -33,8 +34,8 @@ class HomeViewModel:AbstractViewModel, ObservableObject {
     }
 }
     func onViewAppear() {
-        Task { [weak self] in
-            await self?.getReports()
+        Task {
+            await self.getReports()
            // print(self?.nodes)
         }
     }

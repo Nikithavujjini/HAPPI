@@ -35,16 +35,16 @@ class AbstractViewModel  {
                 self.isLoading = false
                 if let nodeCollection = nodeCollection, (nodeCollection.page ?? 0) > 0 {
                     if let embedded = nodeCollection.embedded, embedded.collection.count > 0 {
-                        DispatchQueue.main.async {
+                      //  DispatchQueue.main.async {
                             
-                                var nodes = self.nodes
-                                nodes.append(contentsOf: embedded.collection)
-                                self.nodes = nodes.removeDuplicates()
+//                                var nodes = self.nodes
+//                                nodes.append(contentsOf: embedded.collection)
+                                self.nodes = embedded.collection.removeDuplicates()
                             
                             if self.nodes.isEmpty {
                                 self.isShowingEmptyList = true
                             }
-                        }
+                        //}
                     }
                     else {
                         self.isShowingEmptyList = true

@@ -3,4 +3,179 @@
    uuid = "A856A680-E892-4ECC-A315-EC4AAADF0B6B"
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E9DE6FD3-DAB2-4460-8FC4-4C960778C747"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Hacknosis/Files/CommentsViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "26"
+            endingLineNumber = "26"
+            landmarkName = "addComment(nodeId:comment:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E8F9DE3E-4029-4630-8DB4-B48512060B9C"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Hacknosis/Home/HomeViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "46"
+            endingLineNumber = "46"
+            landmarkName = "getReportsFiltered(type:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "E8F9DE3E-4029-4630-8DB4-B48512060B9C - fcdf4e8838e2d9c9"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Hacknosis.HomeViewModel.getReportsFiltered(type: Hacknosis.ScreenType) -&gt; Swift.Array&lt;Hacknosis.NodeModel&gt;"
+                  moduleName = "Hacknosis"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/nvujjini/Documents/Hacknosis/Hacknosis/Hacknosis/Home/HomeViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "46"
+                  endingLineNumber = "46"
+                  offsetFromSymbolStart = "80">
+               </Location>
+               <Location
+                  uuid = "E8F9DE3E-4029-4630-8DB4-B48512060B9C - b73888de97c11a6c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Hacknosis.NodeModel) -&gt; Swift.Bool in Hacknosis.HomeViewModel.getReportsFiltered(type: Hacknosis.ScreenType) -&gt; Swift.Array&lt;Hacknosis.NodeModel&gt;"
+                  moduleName = "Hacknosis"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/nvujjini/Documents/Hacknosis/Hacknosis/Hacknosis/Home/HomeViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "46"
+                  endingLineNumber = "46"
+                  offsetFromSymbolStart = "45">
+               </Location>
+               <Location
+                  uuid = "E8F9DE3E-4029-4630-8DB4-B48512060B9C - fcdf4e8838e2d9c9"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Hacknosis.HomeViewModel.getReportsFiltered(type: Hacknosis.ScreenType) -&gt; Swift.Array&lt;Hacknosis.NodeModel&gt;"
+                  moduleName = "Hacknosis"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/nvujjini/Documents/Hacknosis/Hacknosis/Hacknosis/Home/HomeViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "46"
+                  endingLineNumber = "46"
+                  offsetFromSymbolStart = "50">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B639AD66-A406-4FED-9462-3E531F7A70A6"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Hacknosis/Home/HomeScreenView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "143"
+            endingLineNumber = "143"
+            landmarkName = "body"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E6A743FC-F445-4882-9F95-7774BEE1A5D9"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Hacknosis/Abstract/AbstractViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "42"
+            endingLineNumber = "42"
+            landmarkName = "getReports()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "E6A743FC-F445-4882-9F95-7774BEE1A5D9 - 8728c440d7275b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for closure #2 @Sendable () async throws -&gt; () in Hacknosis.AbstractViewModel.getReports() async -&gt; ()"
+                  moduleName = "Hacknosis"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/nvujjini/Documents/Hacknosis/Hacknosis/Hacknosis/Abstract/AbstractViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "42"
+                  endingLineNumber = "42"
+                  offsetFromSymbolStart = "921">
+               </Location>
+               <Location
+                  uuid = "E6A743FC-F445-4882-9F95-7774BEE1A5D9 - 5cdebe485bac6359"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for closure #2 @Sendable () async throws -&gt; () in Hacknosis.AbstractViewModel.getReports() async -&gt; ()"
+                  moduleName = "Hacknosis"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/nvujjini/Documents/Hacknosis/Hacknosis/Hacknosis/Abstract/AbstractViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "42"
+                  endingLineNumber = "42"
+                  offsetFromSymbolStart = "744">
+               </Location>
+               <Location
+                  uuid = "E6A743FC-F445-4882-9F95-7774BEE1A5D9 - 8728c440d7275b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for closure #2 @Sendable () async throws -&gt; () in Hacknosis.AbstractViewModel.getReports() async -&gt; ()"
+                  moduleName = "Hacknosis"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/nvujjini/Documents/Hacknosis/Hacknosis/Hacknosis/Abstract/AbstractViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "42"
+                  endingLineNumber = "42"
+                  offsetFromSymbolStart = "766">
+               </Location>
+               <Location
+                  uuid = "E6A743FC-F445-4882-9F95-7774BEE1A5D9 - 5cdebe485bac6359"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for closure #2 @Sendable () async throws -&gt; () in Hacknosis.AbstractViewModel.getReports() async -&gt; ()"
+                  moduleName = "Hacknosis"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/nvujjini/Documents/Hacknosis/Hacknosis/Hacknosis/Abstract/AbstractViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "42"
+                  endingLineNumber = "42"
+                  offsetFromSymbolStart = "590">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

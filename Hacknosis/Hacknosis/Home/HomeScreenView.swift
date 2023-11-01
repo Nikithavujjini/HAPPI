@@ -106,6 +106,7 @@ struct HomeScreenView: View {
                                 .onTapGesture {
                                     // viewModel.onViewAppear()
                                     selectedType = item.screenType
+                                    viewModel.filteredNodes = viewModel.getReportsFiltered(type: item.screenType)
                                     if item.screenType == .upload {
                                         viewModel.isShowingUploadScreenView = true
                                     } else {
@@ -132,7 +133,7 @@ struct HomeScreenView: View {
 //                LoadingSpinnerView()
 //            }
             
-            NavigationLink(EMPTY_STRING, destination: FilesScreenView(nodes: viewModel.getReportsFiltered(type: selectedType)), isActive:$viewModel.isShowingFilesScreenView).opacity(0).isHidden(true)
+            NavigationLink(EMPTY_STRING, destination: FilesScreenView(nodes: $viewModel.filteredNodes), isActive:$viewModel.isShowingFilesScreenView).opacity(0).isHidden(true)
             NavigationLink(EMPTY_STRING, destination: UploadFilesScreenView(), isActive:$viewModel.isShowingUploadScreenView).opacity(0).isHidden(true)
             NavigationLink(EMPTY_STRING, destination: ProfileScreenView(), isActive:$viewModel.isShowingProfileScreen).opacity(0).isHidden(true)
 
