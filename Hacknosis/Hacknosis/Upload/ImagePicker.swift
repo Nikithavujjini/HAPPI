@@ -79,28 +79,7 @@ struct ImagePicker: UIViewControllerRepresentable {
                     print(error.localizedDescription)
                 }
             }
-//            else if let videoUrl = info[UIImagePickerController.InfoKey.mediaURL] as? URL {
-//                let documentsDirectory = FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask).first
-//                let videoName = String.localizedStringWithFormat(UPLOAD_VIDEO_NAME, (DateHelper.ISO8601MediaDateFormatter.string(from: Date())))
-//                guard let targetURL = documentsDirectory?.appendingPathComponent(videoName) else { return }
-//
-//                do {
-//                    if FileManager.default.fileExists(atPath: targetURL.path) {
-//                        try FileManager.default.removeItem(at: targetURL)
-//                    }
-//
-//                    try FileManager.default.copyItem(at: videoUrl, to: targetURL)
-//                    self.parent.mediaItems.items = [PhotoPickerModel]()
-//
-//                    DispatchQueue.main.async {
-//                        self.parent.mediaItems.append(item: PhotoPickerModel(with: targetURL, name:targetURL.absoluteString.removingPercentEncoding?.components(separatedBy: "/").last ?? "", media: .video))
-//                        self.parent.didFinishPicking(true)
-//                        self.parent.presentationMode.wrappedValue.dismiss()
-//                    }
-//                } catch {
-//                    print(error.localizedDescription)
-//                }
-//            }
+
             else if let pickedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
                 let documentsDirectory = FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask).first
                 let imageName = "img"

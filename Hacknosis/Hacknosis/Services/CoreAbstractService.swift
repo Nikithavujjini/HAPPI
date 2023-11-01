@@ -164,13 +164,6 @@ class CoreAbstractService: CoreServiceProtocol {
             
                 .catch({ error -> AnyPublisher<URLSession.DownloadTaskPublisher.Output, CoreError> in
                     if error.type == .authenticationFailed {
-//                        if let sharedLink = self.sharedLink {
-//                            return sharedLink.getAccessTokenPublisher(forceRefresh: true)
-//                                .flatMap({ accessToken in
-//                                    return session.downloadPublisher(urlRequest: urlRequest, accessToken: accessToken)
-//                                })
-//                                .eraseToAnyPublisher()
-//                        } else {
                             return AuthenticationManager.shared.getAccessTokenPublisher(forceRefresh:true)
                                 .flatMap({ accessToken in
                                     return session.downloadPublisher(urlRequest: urlRequest, accessToken: accessToken)
@@ -178,9 +171,6 @@ class CoreAbstractService: CoreServiceProtocol {
                                 .eraseToAnyPublisher()
                         
                     } else {
-//                        if CoreDownloadManager.shared.sslErrorOccured {
-//                            return Fail(error: CoreError.init(title: SSL_TITLE_ERROR,message: SSL_ERROR)).eraseToAnyPublisher()
-//                        }
                         return Fail(error: error).eraseToAnyPublisher()
                     }
                 })

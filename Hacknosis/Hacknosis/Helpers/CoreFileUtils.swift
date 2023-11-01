@@ -57,11 +57,6 @@ class CoreFileUtils: NSObject {
         return UserHelper.isCurrentUserADoctor() ? userDirectory.appendingPathComponent("\(fileName)-redacted") : userDirectory.appendingPathComponent(fileName)
     }
     
-//    static func getFilePathToStoreInRealm(nodeId:String, fileName:String) -> String {
-//        let userKey = OfflineFilesManager.shared.userSubscriptionUniqueKey ?? "anonymous"
-//        return userKey + "/" + nodeId + "/" + fileName
-//    }
-    
     static func removeFile(at url:URL?) {
         if let url = url, FileManager.default.fileExists(atPath: url.path) {
             try? FileManager.default.removeItem(atPath: url.path)

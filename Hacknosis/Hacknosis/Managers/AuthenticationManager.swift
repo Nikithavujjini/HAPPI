@@ -8,11 +8,6 @@
 import Foundation
 import Combine
 
-/**
- The authentication manager provides access to the access and refresh tokens as well as handles the refreshing of the access token.
- - Note:
-    Retrieving and/or refreshing of the accesstoken occurs in a synchronous queue so that if a refreshing of the access is needed all other threads that need the access token will need to wait until either the refreshing of the access token succeeds or fails.
- */
 
 class AuthenticationManager {
     
@@ -70,61 +65,12 @@ class AuthenticationManager {
             }
         }
     }
-    
-//    ///Simple check used to determine if the user is signed in or not.
-//    public var isSignedIn:Bool {
-//        get {
-//            return UserHelper.getCurrentUserFromRealm() != nil
-//        }
-//    }
-//
-//    public var offlinePin:String {
-//        get{
-//            if let uniqueKey = userSubscriptionUniqueKey, let pincode = KeychainHelper.fetchWithString(uniqueKey) {
-//                return pincode
-//            }
-//            return ""
-//        }
-//        set {
-//            KeychainHelper.storeWithString(userSubscriptionUniqueKey ?? "", token: newValue)
-//        }
-//    }
-//
-//    public var isOfflineAuthenticationEnabled: Bool {
-//        return (offlinePin.count > 0 || isTouchIdEnabled)
-//    }
-    
-//    public var isTouchIdEnabled:Bool {
-//        set {
-//            UserDefaults.appGroup?.set(newValue, forKey: userSubscriptionUniqueKey ?? "")
-//        }
-//        get {
-//            if let uniqueKey = userSubscriptionUniqueKey,let appgroup = UserDefaults.appGroup {
-//                return appgroup.bool(forKey: uniqueKey)
-//            }
-//            return false
-//        }
-//    }
-    
-    public var isBiometricDisabled:Bool {
-        set {
-            UserDefaults.appGroup?.set(newValue, forKey: BIOMETRICS_DISABLED )
-        }
-        get {
-            if let appgroup = UserDefaults.appGroup {
-                return appgroup.bool(forKey: BIOMETRICS_DISABLED)
-            }
-            return false
-        }
-    }
+
+
 
     var refreshTokenPublisher:AnyPublisher<String, CoreError>?
     
-    /**
-     Get access token publisher.
-     - Note: Since the function is performed in the accessQueue syncronously if refreshTokenPublisher already exists simply return it. Since this publisher is shared once access token is either taken from the keychain or from a refresh access tokens all subsequent publishers will get the same access token.
-            
-     */
+   
     func getAccessTokenPublisher(forceRefresh:Bool = false) -> AnyPublisher<String, CoreError> {
         
         return accessQueue.sync {
@@ -184,7 +130,6 @@ class AuthenticationManager {
     }
     
     //MARK: - Delete Tokens
-    ///Remove all tokens from the keychain.
     func deleteTokens(){
         clearTokensInKeyChain()
     }
@@ -194,13 +139,5 @@ class AuthenticationManager {
         KeychainHelper.deleteKeyChainItem(.refreshToken)
     }
     
-//    var userSubscriptionUniqueKey:String? {
-//        if let userModel = UserHelper.getCurrentUserFromRealm() {
-//            var key = userModel.id
-//            key.append(EnvironmentManager.shared.tenantId)
-//            return key
-//        }
-//        return nil
-//    }
 }
 

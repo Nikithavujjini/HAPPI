@@ -38,31 +38,7 @@ class CorePreviewController: QLPreviewController {
             }
         }
     }
-    
-//    deinit{
-//        UserStateManager.shared.isViewerScreenPresented = false
-//        NotificationCenter.default.post(name: .showHideNetworkOverlay, object: nil)
-//    }
-//
-//    func addDefaultTint() {
-//        var colorName = COLOR_NAVIGATION_BAR_TITLE
-//        if !NetworkReachability.shared.isConnected && UserStateManager.shared.isOfflineModeEnabled {
-//            colorName = COLOR_TEXT_DEFAULT
-//        }
-//        UIBarButtonItem.appearance().tintColor = .systemBlue
-//        UIBarButtonItem.appearance(whenContainedInInstancesOf: [UIToolbar.self]).tintColor = UIColor(named:colorName)!
-//    }
-//
-//    func addWhiteTint() {
-//        var colorName = COLOR_NAVIGATION_BAR_TITLE
-//        if !NetworkReachability.shared.isConnected  && UserStateManager.shared.isOfflineModeEnabled {
-//            colorName = COLOR_TEXT_DEFAULT
-//        }
-//
-//        UIBarButtonItem.appearance().tintColor = UIColor(named:colorName)!
-//        UIBarButtonItem.appearance(whenContainedInInstancesOf: [UIToolbar.self]).tintColor = UIColor(named:colorName)!
-//    }
-//
+
     //listen to this from filesviewmodel
     
     @objc func backButtonPressed() {

@@ -19,12 +19,4 @@ struct RedactedResponseModel:Decodable {
 }
 
 
-//extension RedactedResponseModel {
-//    init(from decoder: Decoder) throws {
-//        let container = try decoder.container(keyedBy: CodingKeys.self)
-//        let base64DataEncoded = try container.decode(String.self, forKey: .redactedImage)
-//
-//            self.redactedImage = base64DataEncoded
-//        
-//    }
-//}
+

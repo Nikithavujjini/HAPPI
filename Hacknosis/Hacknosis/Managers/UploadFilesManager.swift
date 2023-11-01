@@ -56,7 +56,7 @@ extension UploadDocumentDetails {
     }
 }
 
-final public class CoreUploadManager: SSLPinningHandler {
+final public class CoreUploadManager: NSObject {
     
     typealias UploadCompletionBlock = (_ node:NodeModel?, _ fileKey:String, _ error : CoreError?) -> Void
     typealias UploadProgressBlock = (_ progress : Double, _ fileKey:String) -> Void
@@ -164,11 +164,8 @@ final public class CoreUploadManager: SSLPinningHandler {
                 self.addItemToCompletedUploads(upload)
                 if upload.fileData.uploadType == .addVersion  {
                     self.removeFromUploads(forUniqueKey:taskDescription)
-//                    NotificationCenter.default.post(name: .showBannerMessage, object: nil, userInfo: [BANNER_MESSAGE_TYPE : BannerMessageType.errorMessage, BANNER_MESSAGE : String.localizedStringWithFormat(VERSION_FAILED_TOAST_MESSAGE,self.documentDetail.name )])
+
                 }
-//                else {
-//                    CoreUploadManager.shared.showBannerMessage()
-//                }
             })
         }
     }
@@ -299,59 +296,7 @@ final public class CoreUploadManager: SSLPinningHandler {
         }
     }
     
-//    func retryMetadaUpload(_ upload:CoreUploadObject) {
-//        upload.errorMessage = nil
-//        upload.progress = 0.98
-//        self.ongoingUploads[upload.taskDescription] = upload
-//
-//        if upload.fileData.uploadType == .addVersion {
-//            addVersionToFile(upload, upload.taskDescription)
-//        } else if upload.fileData.uploadType == .newUpload {
-//            createFile(upload, upload.taskDescription)
-//        }
-//    }
-        
-//    func showBannerMessage() {
-//        if let banner = self.generateBannerMessage() {
-//            NotificationCenter.default.post(name: .showBannerMessage, object: nil, userInfo: [BANNER_MESSAGE_TYPE : banner.type, BANNER_MESSAGE: banner.message, BANNER_LIST_ITEMS: banner.items as Any])
-//        }
-//    }
-    
-//    private func generateBannerMessage() -> BannerMessage? {
-//        let currentUploads = currentUploads()
-//        var bannerMessage:BannerMessage? = nil
-//
-//        if currentUploads.filter({$0.value.fileData.uploadType == .newUpload && $0.value.errorMessage == nil }).count == 0 {
-//
-//            let completedUploads = allCompletedUploads()
-//            let failedUploadsCount = failedUploadsCount()
-//
-//            if failedUploadsCount > 0 {
-//                var message = String.localizedStringWithFormat(MULTIPLE_UPLOADS_FAIL, "\(failedUploadsCount)")
-//                //change message if there is only one upload
-//                if failedUploadsCount == 1 {
-//                    message = String.localizedStringWithFormat(MULTIPLE_UPLOADS_SINGLE_FAIL, "\(failedUploadsCount)")
-//                }
-//                bannerMessage = BannerMessage(message: message, type: .errorMessage, items: completedUploads)
-//                self.handleRemoveFailedUploads(nil)
-//            } else {
-//                if completedUploads.count > 0 {
-//                    var message = String.localizedStringWithFormat(MULTIPLE_UPLOADS_SUCCESS, "\(completedUploads.count)")
-//                    //change message if there is only one upload
-//                    if completedUploads.count == 1 {
-//                        message = String.localizedStringWithFormat(SINGLE_UPLOAD_SUCCESS, "\"\(completedUploads.last?.fileData.name ?? "")\"")
-//                    }
-//                    bannerMessage = BannerMessage(message: message, type: .successMessage)
-//                }
-//            }
-//
-//            NotificationCenter.default.post(name: .removeFailedUploadFiles, object: nil)
-//            if completedUploads.count == 0 && failedUploadsCount == 0 {
-//                NotificationCenter.default.post(name: .dismissMessageOverlay, object: nil)
-//            }
-//        }
-//        return bannerMessage
-//    }
+
     
     // API Methods
     
@@ -479,14 +424,7 @@ extension CoreUploadManager : URLSessionDelegate, URLSessionTaskDelegate, URLSes
             }
             
             //remove temarary multipart file
-            //CoreFileUtils.removeFile(at: upload.fileData.fileUrl)
 
-//            if response.isAuthenticationFailed() {
-//                if upload.service.sharedLink == nil {
-//                    LogoutHelper.logout()
-//                }
-//                return
-//            }
             
             guard response.isResponseOK() else {
                 let error = CoreError(httpResponse: response)
@@ -508,11 +446,6 @@ extension CoreUploadManager : URLSessionDelegate, URLSessionTaskDelegate, URLSes
                         self.removeFromUploads(forUniqueKey: taskDescription)
 //                        NotificationCenter.default.post(name: .showBannerMessage, object: nil, userInfo: [BANNER_MESSAGE_TYPE : BannerMessageType.errorMessage, BANNER_MESSAGE : String.localizedStringWithFormat(VERSION_FAILED_TOAST_MESSAGE,self.documentDetail.name )])
                     }
-//                    else {
-//                        CoreUploadManager.shared.showBannerMessage()
-//                    }
-                    //remove temarary multipart file
-                    //CoreFileUtils.removeFile(at: upload.fileData.fileUrl)
                 })
                 return
             }
@@ -592,10 +525,6 @@ extension CoreUploadManager : URLSessionDelegate, URLSessionTaskDelegate, URLSes
         completionHandler(nil)
     }
     
-    public func urlSession(_ session: URLSession, didReceive challenge: URLAuthenticationChallenge, completionHandler: @escaping (URLSession.AuthChallengeDisposition, URLCredential?) -> Void) {
-        sslPinning(for: challenge, with: completionHandler)
-    }
-     
     
     func uploadFileToGcp(bytesData: String, fileName: String, contentType: String) {
 
@@ -867,79 +796,4 @@ class CoreUploadObject: NSObject {
         self.progress = progress
     }
     
-//    func showMessage(with error: CoreError?) {
-//        if let error = error {
-//            NotificationCenter.default.post(name: .showBannerMessage, object: nil, userInfo: [BANNER_MESSAGE_TYPE : BannerMessageType.errorMessage, BANNER_MESSAGE : String.localizedStringWithFormat(VERSION_FAILED_TOAST_MESSAGE,fileData.name)])
-//            errorMessage = error.message
-//        } else {
-//            NotificationCenter.default.post(name: .showBannerMessage, object: nil, userInfo: [BANNER_MESSAGE_TYPE : BannerMessageType.successMessage, BANNER_MESSAGE : String.localizedStringWithFormat(VERSION_ADDED_TOAST_MESSAGE,fileData.versionName ?? "File")])
-//        }
-//    }
 }
-
-//extension CoreUploadObject: BannerListItem {
-//    var bannerProgress: Double {
-//        return progress ?? 0
-//    }
-//
-//    var bannerFileName: String {
-//        fileData.name
-//    }
-//
-//    var bannerAccessibilityLabel:String {
-//        return bannerErrorMessage == nil ? String.localizedStringWithFormat(SINGLE_UPLOAD_SUCCESS, bannerFileName) : "\(bannerFileName)"
-//    }
-//
-//    var bannerImageName: String {
-//        fileData.mimeTypeImageName
-//    }
-//
-//    var bannerErrorMessage: String? {
-//        return errorMessage
-//    }
-//
-//    var bannerFileUrl: String? {
-//        return nil
-//    }
-//
-//    func updateProgress(_ progress: Double) {
-//        self.progress = progress
-//    }
-//
-//    func updateError(_ error: String?) {
-//        self.errorMessage = error
-//    }
-//
-//    func cancelOperation() {
-//        CoreUploadManager.shared.cancelUpload(forUniqueKey: fileData.fileKey)
-//    }
-//
-//    func retryOperation(taskProgress:@escaping((Double)->Void)) {
-//        updateError(nil)
-//        if failType == .metadata {
-//            progress = 0.98
-//
-//        } else if failType == .content {
-//            progress = 0
-//            updateError(ERROR_UNKNOWN_ERROR)
-//        }
-//
-//        taskProgress(bannerProgress)
-////        NotificationCenter.default.post(name: .retryUpload, object: self)
-//
-//        if failType == .content {
-//            CoreUploadManager.shared.uploadFile(fileData: fileData, service: self.service, onProgress: { progress, fileKey in
-//                if progress < 1 {
-//                    taskProgress(progress)
-//                }
-//                self.updateProgress(progress)
-//            }, onCompletion: { node, fileKey, error in
-//                taskProgress(1)
-//                self.updateProgress(1)
-//                self.updateError(error?.message)
-//            })
-//        }
-//    }
-//
-//}
-

@@ -18,7 +18,6 @@
 		F81969372AD850FD00F73793 /* CoreRouterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81969362AD850FD00F73793 /* CoreRouterProtocol.swift */; };
 		F81969392AD8548D00F73793 /* CoreAbstractService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81969382AD8548D00F73793 /* CoreAbstractService.swift */; };
 		F819693B2AD8556300F73793 /* CoreServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F819693A2AD8556300F73793 /* CoreServiceProtocol.swift */; };
-		F8385F622AF1403F008F527F /* SSLHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8385F612AF1403F008F527F /* SSLHelper.swift */; };
 		F85998572ADE3D0A009F817B /* FilesScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F85998562ADE3D0A009F817B /* FilesScreenView.swift */; };
 		F85998592ADE3D30009F817B /* FilesListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F85998582ADE3D30009F817B /* FilesListItemView.swift */; };
 		F86355112AEF87310060FAFA /* NavigationBarManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86355102AEF87310060FAFA /* NavigationBarManager.swift */; };
@@ -120,7 +119,6 @@
 		F81969362AD850FD00F73793 /* CoreRouterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreRouterProtocol.swift; sourceTree = "<group>"; };
 		F81969382AD8548D00F73793 /* CoreAbstractService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreAbstractService.swift; sourceTree = "<group>"; };
 		F819693A2AD8556300F73793 /* CoreServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreServiceProtocol.swift; sourceTree = "<group>"; };
-		F8385F612AF1403F008F527F /* SSLHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSLHelper.swift; sourceTree = "<group>"; };
 		F85998562ADE3D0A009F817B /* FilesScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilesScreenView.swift; sourceTree = "<group>"; };
 		F85998582ADE3D30009F817B /* FilesListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilesListItemView.swift; sourceTree = "<group>"; };
 		F86355102AEF87310060FAFA /* NavigationBarManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarManager.swift; sourceTree = "<group>"; };
@@ -229,7 +227,6 @@
 			children = (
 				F81969282AD7B12900F73793 /* CryptoHelper.swift */,
 				F8E7A06A2AEEC8FD00D18F18 /* MailHelper.swift */,
-				F8385F612AF1403F008F527F /* SSLHelper.swift */,
 				F819692C2AD7BD1600F73793 /* KryptoHelper.swift */,
 				F8648F962AD9068800812B04 /* NetworkReachability.swift */,
 				F8648FA72AD95E7B00812B04 /* UserHelper.swift */,
@@ -650,7 +647,6 @@
 				F81969332AD7C34000F73793 /* AuthenticationRouter.swift in Sources */,
 				F87B01912AE97E74002C7422 /* CommentsView.swift in Sources */,
 				F8B876C82ADCF25000479B9F /* Images.swift in Sources */,
-				F8385F622AF1403F008F527F /* SSLHelper.swift in Sources */,
 				F89FC8682ADEFD6700F5A5E0 /* NodeCollectionModel.swift in Sources */,
 				F85998572ADE3D0A009F817B /* FilesScreenView.swift in Sources */,
 				F89FC8782ADFE22800F5A5E0 /* PreviewContainerController.swift in Sources */,
@@ -839,14 +835,14 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Hacknosis/Preview Content\"";
-				DEVELOPMENT_TEAM = E9N9F7T59W;
+				DEVELOPMENT_TEAM = DBY9ULULG5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Hacknosis/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Hacknosis;
 				INFOPLIST_KEY_LSApplicationCategoryType = "";
-				INFOPLIST_KEY_NSCameraUsageDescription = "Upload a photo or video to OpenText Core Content.";
-				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "Hacknosis needs permission to access photos on your device";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Upload a photo or video to HAPPI";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "Happi needs permission to access photos on your device";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -881,8 +877,8 @@
 				INFOPLIST_FILE = Hacknosis/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Hacknosis;
 				INFOPLIST_KEY_LSApplicationCategoryType = "";
-				INFOPLIST_KEY_NSCameraUsageDescription = "Upload a photo or video to OpenText Core Content.";
-				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "Hacknosis needs permission to access photos on your device";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Upload a photo or video to HAPPI";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "Happi needs permission to access photos on your device";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

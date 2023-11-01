@@ -19,13 +19,7 @@ class UserService:CoreAbstractService {
         return callAPI(router: router)
     }
     
-    /**
-     Get the current user.
-     - parameters:
-        - completion:once the request is complete the completion closure will be called.
-        - user:If successful then the user object will be populated.
-        - error: if there's an error the error parameter will be populated.
-     */
+    
     @discardableResult
     func getCurrentUser(completion:@escaping(_ user:UserModel?, _ error:CoreError?) -> Void) -> AnyCancellable? {
         guard let publisher = publisher(for: .getCurrentUser) else { return nil }

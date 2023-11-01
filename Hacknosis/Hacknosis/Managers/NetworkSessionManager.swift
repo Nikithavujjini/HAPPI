@@ -24,7 +24,7 @@ enum URLSessionType:Int {
  Used to get the right CoreURLSession for a given request.
  */
 
-class NetworkSessionManager: SSLPinningHandler {
+class NetworkSessionManager: NSObject, URLSessionDelegate {
     
     //MARK: - Variables
     static let shared = NetworkSessionManager()
@@ -55,8 +55,3 @@ class NetworkSessionManager: SSLPinningHandler {
     
 }
 
-extension NetworkSessionManager: URLSessionDelegate {
-    func urlSession(_ session: URLSession, didReceive challenge: URLAuthenticationChallenge, completionHandler: @escaping (URLSession.AuthChallengeDisposition, URLCredential?) -> Void) {
-        sslPinning(for: challenge, with: completionHandler)
-    }
-}

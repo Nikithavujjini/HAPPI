@@ -180,46 +180,6 @@ final public class CoreDownloadManager: NSObject {
         return key
     }
     
-//    @objc func handleDismissMessageOverlay(_ notification:Notification?) {
-//        self.removeAllCompletedDownloads()
-//    }
-//
-//    func showBannerMessage() {
-//        if let banner = self.generateBannerMessage() {
-//            NotificationCenter.default.post(name: .showBannerMessage, object: nil, userInfo: [BANNER_MESSAGE_TYPE : banner.type, BANNER_MESSAGE: banner.message, BANNER_LIST_ITEMS: banner.items as Any])
-//        }
-//    }
-    
-//    private func generateBannerMessage() -> BannerMessage? {
-//        if currentDownloads().count == 0 {
-//            var completedDownloads = allCompletedDownloads()
-//            let failedDownloadsCount = failedDownloadsCount()
-//            //check if it has failed downloads
-//            if failedDownloadsCount > 0 {
-//                var message = String.localizedStringWithFormat(MULTIPLE_DOWNLOADS_FAIL, "\(failedDownloadsCount)")
-//                //change message if there is only one download
-//                if failedDownloadsCount == 1 && completedDownloads.count == 1 {
-//                    message = String.localizedStringWithFormat(SINGLE_DOWNLOAD_FAIL, "\"\(completedDownloads.last?.fileName ?? "")\"")
-//                    completedDownloads.removeAll()
-//                } else if failedDownloadsCount == 1 {
-//                    message = String.localizedStringWithFormat(MULTIPLE_DOWNLOADS_SINGLE_FAIL, "\(failedDownloadsCount)")
-//                }
-//                return BannerMessage(message: message, type: .errorMessage, items: completedDownloads)
-//            } else {
-//
-//                var message = String.localizedStringWithFormat(MULTIPLE_DOWNLOADs_SUCCESS, "\(completedDownloads.count)")
-//                //change message if there is only one download
-//                if completedDownloads.count == 1 {
-//                    message = String.localizedStringWithFormat(SINGLE_DOWNLOAD_SUCCESS, "\"\(completedDownloads.last?.fileName ?? "")\"")
-//                }
-//
-//                if completedDownloads.count > 0 {
-//                    return BannerMessage(message: message, type: .successMessage)
-//                }
-//            }
-//        }
-//        return nil
-//    }
 }
 
 
@@ -315,15 +275,6 @@ extension CoreDownloadManager : URLSessionDelegate, URLSessionDownloadDelegate, 
                 try? FileManager.default.moveItem(atPath: url.path, toPath: fileUrl.path)
                 try? (fileUrl as NSURL).setResourceValue(URLFileProtection.complete, forKey: .fileProtectionKey)
                 
-                //this delay is to show 100% progress
-//                DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
-//                    OperationQueue.main.addOperation({
-//                        self.ongoingDownloads.removeValue(forKey:key)
-//                        for block in completionBlocks {
-//                            block(CoreFileUtils.getFilePathToStoreInRealm(nodeId: download.fileData.fileId, fileName: download.fileData.fileName), key, nil)
-//                        }
-//                    })
-//                }
             }
             
             catch let error {
@@ -397,9 +348,6 @@ extension CoreDownloadManager : URLSessionDelegate, URLSessionDownloadDelegate, 
         completionHandler(nil)
     }
     
-//    public func urlSession(_ session: URLSession, didReceive challenge: URLAuthenticationChallenge, completionHandler: @escaping (URLSession.AuthChallengeDisposition, URLCredential?) -> Void) {
-//        sslPinning(for: challenge, with: completionHandler)
-//    }
 }
 
 class CoreDownloadObject: NSObject {

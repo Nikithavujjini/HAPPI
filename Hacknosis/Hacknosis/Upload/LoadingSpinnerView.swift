@@ -9,7 +9,6 @@ import SwiftUI
 
 import SwiftUI
 
-///Core Content animated loading spinner
 struct LoadingSpinnerView:View {
     
     //MARK: - Variables

@@ -18,18 +18,4 @@ extension UploadHelper {
 enum UploadType {
     case none, photosAndVideos, files, camera, versionFile, versionCamera, gallery
     
-//    var value: String {
-//        switch self {
-//        case .photosAndVideos:
-//            return PHOTOS_TEXT
-//        case .versionCamera:
-//            return CAPTURE_TEXT
-//        case .files:
-//            return FILES_TEXT
-//        case .gallery:
-//            return GALLERY_PHOTO_TEXT
-//        default:
-//            return EMPTY_STRING
-//        }
-//    }
 }
