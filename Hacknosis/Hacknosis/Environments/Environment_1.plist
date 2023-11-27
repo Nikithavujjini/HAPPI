@@ -31,10 +31,6 @@
 		<string>https://na-1-dev.api.opentext.com/tenants/110f8020-9556-4bb6-8d36-23104705a228/oauth2/token</string>
 		<key>nameLocalizedKey</key>
 		<string>NA-DEV</string>
-		<key>sharedAuthenticationUrl</key>
-		<string>https://otdsauth-c4sapdevx.devxlab.opentext.com/otdstenant</string>
-		<key>publicKey</key>
-		<string>RkhWTcfJAQN/YxOR12VkPo+PhmIoSfWd/JVkg44einY=</string>
 	</dict>
 </array>
 </plist>
